@@ -1,42 +1,43 @@
 # App brief
 
-When forking this repository for a specific app idea, replace the placeholders below before asking the agent to build it. Keep the scope small enough for a two-hour workshop. Unfilled placeholders are not requirements; the agent should ask about missing details needed for implementation.
+This brief describes the first version of the app. Change it when your team decides something new; the agent follows it. Unfilled points are not requirements; the agent should ask about missing details needed for implementation.
 
 ## App name
 
-[Name of your app]
+Quiz Night
 
 ## User and problem
 
-- Who will use it? [Target user]
-- What problem does it solve? [Problem or need]
+- Who will use it? Workshop participants who want to test what they learned about LLMs and AI agents.
+- What problem does it solve? New concepts are easier to remember when you use them in a playful way.
 
 ## Main user journey
 
-[Describe one complete journey: the user starts by ..., does ..., and finishes with ...]
+The player starts the quiz, answers five multiple-choice questions one at a time, sees immediately whether each answer was right, and finishes on a result screen with the score.
 
 ## Must-have features
 
-List at most three features needed for the main journey.
-
-1. [Feature]
-2. [Feature, if needed]
-3. [Feature, if needed]
+1. Five questions with four answer options each.
+2. Immediate feedback after each answer, with a visible running score.
+3. A result screen with the final score and a "Play again" button.
 
 ## Demo acceptance criteria
 
-Describe observable results that show the app works. Use these to check the final demo.
-
-- [Given a starting state, when the user performs an action, then an expected result appears.]
-- [Another observable result, if needed.]
+- Given the start screen, when the player clicks Start, then question 1 of 5 appears with four answer options.
+- Given a question, when the player picks the right answer, then it is marked as correct and the running score goes up by one.
+- Given the last answer, then the result screen shows the score, for example "4 of 5", and "Play again" starts over with a score of 0.
 
 ## Sample data
 
-[Describe the fictional data needed for the demo, or write "None". Do not include real personal data or credentials.]
+Multiple-choice questions about LLMs, tokens, context windows and AI agents. The agent drafts ten questions in one data file. The app shows the first five in that order; the team fact-checks all ten and moves its best five to the top.
 
 ## Out of scope
 
-[Features deliberately postponed beyond this workshop.]
+- Timer
+- Categories and difficulty levels
+- Saving high scores
+- More than one player
+- Level-ups from README.md, until the team adds them to this brief
 
 ## Explicit overrides
 
@@ -46,4 +47,4 @@ When an override is requested, replace "None" with the specific participant deci
 
 ## Project decisions
 
-[Record other persistent decisions made by the participant as the app develops, or write "None yet".]
+None yet.
