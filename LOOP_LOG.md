@@ -4,18 +4,10 @@ One line per loop: what you asked the agent, what happened, and what you changed
 
 | # | Prompt (short) | What happened | What we changed |
 |---:|---|---|---|
-| 1 | | | |
-
-## For the Presentation
-
-Each group has about five minutes. Use the log to answer:
-
-- What did you try to build?
-- What did you actually achieve?
-- What worked well with the AI agent?
-- What surprised you?
-- Where did the AI struggle?
-- What did you change or correct?
-- What would you try next?
-
-An unfinished app is fine if you can explain what you learned.
+| 1 | "Brief me on APP_BRIEF.md and suggest improvements" | Agent summarised the brief and suggested a random question pool, a nicer UI, shuffled answers, answer review, keyboard controls and the README level-ups. It warned that the first version should run before adding extras. | We decided to build the pool, the UI and all level-ups. |
+| 2 | "Implement all the level-ups, keep the loop log updated, build the app" (loop 1 of the build: pool + core quiz + UI) | Agent updated APP_BRIEF.md with our decisions, wrote 40 questions (10 per topic, easy/medium/hard, with explanations) in `src/questions.ts`, and built start → 5 random questions → result → Play again with shuffled answers and a game-show look. Lint, build and a browser test passed: all 3 acceptance criteria work, and 8 games in a row showed all 40 questions without repeats. | Nothing yet. Questions still need our fact-check. |
+| 3 | Loop 2 of the build: gameplay level-ups | Agent added a setup screen (1 or 2 players with names, topic, difficulty, countdown on/off), an explanation after every answer, a 20-second countdown with a speed bonus, two players taking turns with a "pass the laptop" screen and a winner, and an answer review on the result screen. Browser test passed. The agent's first countdown test failed because of the test itself (fake clock), not the app; it re-tested with real time. | Agent aligned the points on the two-player result cards after looking at a screenshot. |
+| 4 | Loop 3 of the build: storage and effects | Agent added a high-score list (top 10, saved in the browser, with a "clear" that asks first), a question editor (custom questions join the random pool), sounds with an on/off switch, confetti for a perfect score or a win, small animations, keyboard controls (A–D or 1–4), and a "Quit game" link. The browser test caught a real accessibility bug: labels wrapped around text boxes made screen readers read the typed text as part of the label. | Agent connected each label to its field instead. After seeing a solo player saved as "Player 1" on the high-score list, it added a name field for 1-player mode. All 64 browser checks, lint and build pass. |
+| 5 | "What else can we add? Opponent picks the question, new design, explanation button. Brief me first." | Agent proposed Challenge mode, an "Explain the answer" button, three design directions (Token Tiles, TV Game Show, Study Cards) and more ideas: lifelines, streak bonus, steal, game length, study mode, retry mistakes, topic stats, demo mode. It warned about time and the missing fact-check. | We picked Study Cards, all ideas, picker scoring on, and asked for a clearly visible Quit button. |
+| 6 | "Build it: Study Cards, all ideas, quit button, less time" | Agent recorded the decisions in APP_BRIEF.md and rebuilt the app: home screen with mode cards, a setup screen per mode, Quit with "are you sure", card flip to the explanation, Challenge and Duel (steal), lifelines, streaks, game length, Study, Demo, Retry my mistakes, Topic stats. 60 browser checks passed, including the 3 acceptance criteria. Left out: an extra note for every wrong option (120 more facts to check). | Screenshots showed two problems, which the agent fixed: the page scrolled sideways by 1 px on phones, and the ruled lines on the back of the card crossed the answer heading. |
+| 7 | (next) Fact-check the questions | | |
